@@ -31,7 +31,7 @@ body {
   }
 }
 .error {
-  color: red;
+  color: rgb(250, 0, 0);
 }
 .temp {
   font-size: 30px;
