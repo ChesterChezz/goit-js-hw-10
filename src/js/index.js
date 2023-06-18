@@ -9,9 +9,9 @@ const catBreed = document.querySelector('.cat-breed');
 const catDescription = document.querySelector('.cat-description');
 const catTemperament = document.querySelector('.cat-temperament');
 const loader = document.querySelector('.loader');
-const error = document.querySelector('.error');
+const errorText = document.querySelector('.error');
 
-error.style.display = 'none';
+errorText.style.display = 'none';
 loader.style.display = 'none';
 fetchBreeds()
   .then(breeds => {
@@ -38,7 +38,7 @@ fetchBreeds()
 select.addEventListener('change', () => {
   const breedId = select.value;
   catInfo.style.display = 'none';
-  error.style.display = 'none';
+  errorText.style.display = 'none';
   loader.style.display = 'block';
   fetchCatByBreed(breedId)
     .then(catData => {
@@ -52,7 +52,7 @@ select.addEventListener('change', () => {
     })
     .catch(error => {
       console.warn('Error fetching cat:', error);
-      error.style.display = 'block';
+      errorText.style.display = 'block';
       loader.style.display = 'none';
     });
 });
